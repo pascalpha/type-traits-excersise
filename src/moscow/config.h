@@ -1,0 +1,10 @@
+//
+// Created by admin on 2021/2/8.
+//
+
+#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_CONFIG_H_
+#define EXERCISE_MOSCOW_SRC_MOSCOW_CONFIG_H_
+
+#define VERSION 1.0
+
+#endif //EXERCISE_MOSCOW_SRC_MOSCOW_CONFIG_H_
