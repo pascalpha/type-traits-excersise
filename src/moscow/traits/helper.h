@@ -6,6 +6,7 @@
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_HELPER_H_
 
 namespace moscow {
+using size_t = decltype(sizeof(nullptr));
 /**
  * \brief integral constant type
  * \tparam T

@@ -1,0 +1,22 @@
+//
+// Created by mamin on 2/8/2021.
+//
+#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_
+#define EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_
+
+#include "moscow/traits/helper.h"
+
+#include "moscow/traits/const_volatility/remove_const.h"
+#include "moscow/traits/const_volatility/remove_cv.h"
+#include "moscow/traits/const_volatility/remove_volatile.h"
+
+#include "moscow/traits/primary/array.h"
+#include "moscow/traits/primary/floating_point.h"
+#include "moscow/traits/primary/integral.h"
+#include "moscow/traits/primary/nullptr.h"
+#include "moscow/traits/primary/void.h"
+
+#include "moscow/traits/properties/is_const.h"
+#include "moscow/traits/properties/is_volatile.h"
+
+#endif //EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_
