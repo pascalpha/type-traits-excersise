@@ -6,6 +6,7 @@
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PROPERTIES_IS_REFERENCEABLE_H
 
 #include "moscow/traits/traits.h"
+#include "moscow/traits/relationships/is_same.h"
 
 namespace moscow {
 namespace detail {
@@ -26,7 +27,7 @@ template<typename T> T is_referenceable_impl(...);
  * \brief defines value = true if T is referenceable
  */
 template<typename T>
-using is_referenceable = bool_constant<!is_same_v < T, decltype(detail::is_referenceable_impl<T>(0))>>;
+using is_referenceable = bool_constant<!is_same_v<T, decltype(detail::is_referenceable_impl<T>(0))>>;
 
 /**
  * \brief value helper for is_referenceable

@@ -153,5 +153,38 @@ TEST_F(fundamental, extent) {
   EXPECT_EQ(5, (rank_v<int[1][2][3][4][5]>));
   EXPECT_EQ(0, (rank_v<int>));
   EXPECT_EQ(5, (rank_v<int[][2][3][4][5]>));
+
+  EXPECT_TRUE((is_same_v<int, remove_extent_t<int[]>>));
+  EXPECT_TRUE((is_same_v<int, remove_extent_t<int[2]>>));
+  EXPECT_TRUE((is_same_v<int[2], remove_extent_t<int[][2]>>));
+  EXPECT_TRUE((is_same_v<int[2], remove_extent_t<int[2][2]>>));
+  EXPECT_TRUE((is_same_v<int (&)[2][2], remove_extent_t<int (&)[2][2]>>));
+
+  EXPECT_TRUE((is_same_v<int, remove_all_extents_t<int[]>>));
+  EXPECT_TRUE((is_same_v<int, remove_all_extents_t<int[2]>>));
+  EXPECT_TRUE((is_same_v<int, remove_all_extents_t<int[][2]>>));
+  EXPECT_TRUE((is_same_v<int, remove_all_extents_t<int[2][2]>>));
+  EXPECT_TRUE((is_same_v<int (&)[2][2], remove_all_extents_t<int (&)[2][2]>>));
+
 }
+
+TEST_F(fundamental, decay) {
+  EXPECT_TRUE((is_same_v<int (*)[3], decay_t<int[][3]>>));
+  EXPECT_TRUE((is_same_v<int (*)[3], decay_t<int[3][3]>>));
+  EXPECT_TRUE((is_same_v<int (*)[3], decay_t<int (&)[3][3]>>));
+  EXPECT_TRUE((is_same_v<int (*)[3], decay_t<int (&)[][3]>>));
+  EXPECT_TRUE((is_same_v<int (*)(int), decay_t<int (&)(int)>>));
+  EXPECT_TRUE((is_same_v<int (*)(int), decay_t<int(int)>>));
+  EXPECT_TRUE((is_same_v<int, decay_t<const int volatile &>>));
+}
+
+TEST_F(fundamental, common) {
+  EXPECT_TRUE((is_same_v<int, common_type_t<int, bool &>>));
+  EXPECT_TRUE((is_same_v<long, common_type_t<int, long, unsigned >>));
+  EXPECT_TRUE((is_same_v<unsigned long, common_type_t<int, long, unsigned long>>));
+  EXPECT_TRUE((is_same_v<double, common_type_t<int, double>>));
+  EXPECT_TRUE((is_same_v<void *, common_type_t<int *, void *, double *>>));
+  EXPECT_TRUE((is_same_v<int (*)(), common_type_t<int (*)(), int (&)()>>));
+  EXPECT_TRUE((is_same_v<int (*)(), common_type_t<int (&)(), int()>>));
+};
 #pragma clang diagnostic pop

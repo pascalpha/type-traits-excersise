@@ -6,9 +6,21 @@
 
 #include "moscow/traits/traits.h"
 
+#include "moscow/traits/arrays/remove_all_extents.h"
+#include "moscow/traits/arrays/remove_extent.h"
+
 #include "moscow/traits/const_volatility/remove_const.h"
 #include "moscow/traits/const_volatility/remove_cv.h"
 #include "moscow/traits/const_volatility/remove_volatile.h"
+
+#include "moscow/traits/misc/common_type.h"
+#include "moscow/traits/misc/conditional.h"
+#include "moscow/traits/misc/decay.h"
+#include "moscow/traits/misc/declval.h"
+#include "moscow/traits/misc/disable_if.h"
+#include "moscow/traits/misc/enable_if.h"
+#include "moscow/traits/misc/remove_cvref.h"
+#include "moscow/traits/misc/underlying_type.h"
 
 #include "moscow/traits/pointers/add_pointer.h"
 #include "moscow/traits/pointers/remove_pointer.h"

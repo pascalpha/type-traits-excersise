@@ -45,38 +45,6 @@ template<template<typename...> typename Temp, typename... Ts> false_type sfinae_
 template<template<typename...> typename Temp, typename... Ts> using sfinae = decltype(sfinae_impl<Temp, Ts...>(0));
 } // namespace detail
 
-/**
- * template dispatcher, else clause
- * @tparam T
- */
-template<bool, typename Then, typename Else> struct conditional { using type = Else; };
-/**
- * template dispatcher, then clause
- * @tparam Then
- * @tparam Else
- */
-template<typename Then, typename Else> struct conditional<true, Then, Else> { using type = Then; };
-
-/**
- * helper template alias for template dispatcher
- */
-template<bool If, typename Then, typename Else> using conditional_t = typename conditional<If, Then, Else>::type;
-
-/**
- * failed template dispatcher
- * @tparam T
- */
-template<bool, typename T = void> struct enable_if {};
-/**
- * succeeded template dispatcher
- * @tparam T
- */
-template<typename T> struct enable_if<true, T> { using type = T; };
-
-/**
- * helper template alias for template dispatcher
- */
-template<bool B, typename T> using enable_if_t = typename enable_if<B, T>::type;
 
 /**
  * placeholder template
