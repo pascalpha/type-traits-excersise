@@ -2,8 +2,8 @@
 // Created by admin on 2021/2/8.
 //
 
-#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_HELPER_H_
-#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_HELPER_H_
+#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_TRAITS_H_
+#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_TRAITS_H_
 
 namespace moscow {
 using size_t = decltype(sizeof(nullptr));
@@ -47,11 +47,6 @@ template<template<typename...> typename Temp, typename... Ts> using sfinae = dec
 
 
 /**
- * placeholder template
- */
-template<typename> using void_t = void;
-
-/**
  * identity metafunction
  * @tparam T
  */
@@ -64,4 +59,4 @@ template<typename T> bool constexpr Template##_v = Template<T>::value
 template<typename T> using Template##_t = typename Template<T>::type
 } // namespace moscow
 
-#endif //EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_HELPER_H_
+#endif //EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_TRAITS_H_

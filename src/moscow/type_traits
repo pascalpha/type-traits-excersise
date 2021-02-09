@@ -21,6 +21,7 @@
 #include "moscow/traits/misc/enable_if.h"
 #include "moscow/traits/misc/remove_cvref.h"
 #include "moscow/traits/misc/underlying_type.h"
+#include "moscow/traits/typedef/void_t.h"
 
 #include "moscow/traits/pointers/add_pointer.h"
 #include "moscow/traits/pointers/remove_pointer.h"

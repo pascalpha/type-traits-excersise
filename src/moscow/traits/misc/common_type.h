@@ -6,6 +6,7 @@
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_MISC_COMMON_TYPE_H
 
 #include "moscow/traits/traits.h"
+#include "moscow/traits/typedef/void_t.h"
 #include "moscow/traits/misc/declval.h"
 #include "moscow/traits/misc/decay.h"
 
