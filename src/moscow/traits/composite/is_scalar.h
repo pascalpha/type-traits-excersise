@@ -17,9 +17,8 @@ namespace moscow {
 /**
  * \brief defines value = true if T is scalar (either arithmetic, pointer, member pointer, null pointer or enum)
  */
-template<typename T> using is_scalar = bool_constant<
-	is_arithmetic_v<T> || is_member_pointer_v<T> || is_pointer_v<T> ||
-		is_null_pointer_v<T> || is_enum_v<T>>;
+template<typename T>
+using is_scalar = bool_constant<is_arithmetic_v<T> || is_member_pointer_v<T> || is_pointer_v<T> || is_null_pointer_v<T> || is_enum_v<T>>;
 
 /**
  * \brief value helper for is_scalar

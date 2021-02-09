@@ -25,9 +25,7 @@ template<typename T> struct is_empty_impl_double { double _; };
  * @tparam T
  */
 template<typename T, bool = is_class_v < T>>
-struct is_empty_impl : bool_constant<
-    sizeof(is_empty_impl_double<T>) == sizeof(is_empty_impl_inherited<T>)> {
-};
+struct is_empty_impl : bool_constant<sizeof(is_empty_impl_double<T>) == sizeof(is_empty_impl_inherited<T>)> {};
 /**
  * Non-class types are not final.
  * @tparam T

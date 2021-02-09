@@ -12,7 +12,7 @@ namespace moscow {
  * failed detector of bounded array
  * @tparam T
  */
-template<typename T> struct is_bounded_array : false_type {}
+template<typename T> struct is_bounded_array : false_type {};
 
 /**
  * succeeded detector if bounded array

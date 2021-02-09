@@ -40,8 +40,7 @@ auto is_base_of_impl(int) -> decltype(pointer_convert<B>(static_cast<D *>(nullpt
  * checks if Base is a possibly private or protected base class or the same class of Derived
  */
 template<typename Base, typename Derived>
-using is_base_of = bool_constant<is_class_v<Base> && is_class_v<Derived> &&
-    decltype(detail::is_base_of_impl<Base, Derived>(0))::value>;
+using is_base_of = bool_constant<is_class_v<Base> && is_class_v<Derived> && decltype(detail::is_base_of_impl<Base, Derived>(0))::value>;
 /**
  * value helper for is_base_of
  * @tparam Base

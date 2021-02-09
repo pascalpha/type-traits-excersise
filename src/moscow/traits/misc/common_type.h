@@ -57,8 +57,7 @@ template<typename Dummy, typename T, typename U, typename ... R> struct common_t
  */
 template<typename T, typename U, typename ... R>
 struct common_type_multi_impl<void_t<typename common_type<T, U>::type>, T, U, R...>
-    : common_type<typename common_type<T, U>::type, R...> {
-};
+    : common_type<typename common_type<T, U>::type, R...> {};
 } // namespace detail
 /**
  * common type of two types possibly decayed
