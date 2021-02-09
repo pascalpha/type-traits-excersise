@@ -79,24 +79,6 @@ template<typename T> struct enable_if<true, T> { using type = T; };
 template<bool B, typename T> using enable_if_t = typename enable_if<B, T>::type;
 
 /**
- * failed identity checker
- * @tparam T
- * @tparam U
- */
-template<typename T, typename U> struct is_same : false_type {};
-/**
- * succeeded identity checker
- * @tparam T
- */
-template<typename T> struct is_same<T, T> : true_type {};
-
-/**
- * helper template alias for identity checker
- */
-template<typename T, typename U>
-bool constexpr is_same_v = is_same<T, U>::value;
-
-/**
  * placeholder template
  */
 template<typename> using void_t = void;

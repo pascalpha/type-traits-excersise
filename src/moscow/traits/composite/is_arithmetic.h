@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_ARITHMETIC_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_ARITHMETIC_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/primary/is_integral.h"
 #include "moscow/traits/primary/is_floating_point.h"
 

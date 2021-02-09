@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_OBJECT_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_OBJECT_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/primary/is_array.h"
 #include "moscow/traits/primary/is_class.h"
 #include "moscow/traits/primary/is_union.h"

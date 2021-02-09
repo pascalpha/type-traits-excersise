@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_COMPOUND_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_COMPOUND_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/composite/is_fundamental.h"
 
 namespace moscow {

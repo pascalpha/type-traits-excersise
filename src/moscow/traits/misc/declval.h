@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_MISC_DECLVAL_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_MISC_DECLVAL_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/references/add_rvalue_reference.h"
 
 namespace moscow {

@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_REFERENCES_REMOVE_REFERENCE_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_REFERENCES_REMOVE_REFERENCE_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 
 namespace moscow {
 /**

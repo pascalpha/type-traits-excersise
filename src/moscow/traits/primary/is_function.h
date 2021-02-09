@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_FUNCTION_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_FUNCTION_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/composite/is_reference.h"
 #include "moscow/traits/properties/is_const.h"
 

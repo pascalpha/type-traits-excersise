@@ -86,4 +86,31 @@ TEST_F(fundamental, object) {
   EXPECT_TRUE((is_member_function_pointer_v<int (X::*)(int)>));
   EXPECT_TRUE(!(is_member_object_pointer_v<int (X::*)(int)>));
 }
+
+TEST_F(fundamental, signedness) {
+  EXPECT_TRUE((is_signed_v<signed>));
+  EXPECT_TRUE((is_signed_v<signed int>));
+  EXPECT_TRUE((is_signed_v<signed long>));
+  EXPECT_TRUE((is_signed_v<double>));
+  EXPECT_TRUE((is_signed_v<float>));
+
+  EXPECT_TRUE(!(is_signed_v<unsigned>));
+  EXPECT_TRUE(!(is_signed_v<unsigned int>));
+  EXPECT_TRUE(!(is_signed_v<unsigned long>));
+  EXPECT_TRUE(!(is_signed_v<double &>));
+  EXPECT_TRUE(!(is_signed_v<signed[]>));
+
+  EXPECT_FALSE((is_unsigned_v<signed>));
+  EXPECT_FALSE((is_unsigned_v<signed int>));
+  EXPECT_FALSE((is_unsigned_v<signed long>));
+  EXPECT_FALSE((is_unsigned_v<double>));
+  EXPECT_FALSE((is_unsigned_v<float>));
+
+  EXPECT_TRUE((is_unsigned_v<unsigned>));
+  EXPECT_TRUE((is_unsigned_v<unsigned int>));
+  EXPECT_TRUE((is_unsigned_v<unsigned long>));
+  EXPECT_TRUE(!(is_unsigned_v<double &>));
+  EXPECT_TRUE(!(is_unsigned_v<signed[]>));
+
+}
 #pragma clang diagnostic pop

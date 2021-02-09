@@ -4,7 +4,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_CV_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_CV_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/const_volatility/remove_const.h"
 #include "moscow/traits/const_volatility/remove_volatile.h"
 

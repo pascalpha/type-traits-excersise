@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_MISC_REMOVE_CVREF_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_MISC_REMOVE_CVREF_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/const_volatility/remove_cv.h"
 #include "moscow/traits/references/remove_reference.h"
 

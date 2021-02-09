@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_MEMBER_FUNCTION_POINTER_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_MEMBER_FUNCTION_POINTER_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/composite/is_member_pointer.h"
 
 namespace moscow {

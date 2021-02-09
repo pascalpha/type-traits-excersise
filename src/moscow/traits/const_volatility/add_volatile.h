@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_CONST_VOLATILITY_ADD_VOLATILE_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_CONST_VOLATILITY_ADD_VOLATILE_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 
 namespace moscow {
 /**

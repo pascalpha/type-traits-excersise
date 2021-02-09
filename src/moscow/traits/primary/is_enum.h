@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_ENUM_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_ENUM_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/primary/is_void.h"
 #include "moscow/traits/primary/is_integral.h"
 #include "moscow/traits/primary/is_floating_point.h"

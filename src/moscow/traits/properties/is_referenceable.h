@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PROPERTIES_IS_REFERENCEABLE_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PROPERTIES_IS_REFERENCEABLE_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 
 namespace moscow {
 namespace detail {

@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_FUNDAMENTAL_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_COMPOSITE_IS_FUNDAMENTAL_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/primary/is_nullptr.h"
 #include "moscow/traits/primary/is_void.h"
 #include "moscow/traits/composite/is_arithmetic.h"

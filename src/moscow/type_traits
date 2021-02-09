@@ -4,7 +4,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 
 #include "moscow/traits/const_volatility/remove_const.h"
 #include "moscow/traits/const_volatility/remove_cv.h"
@@ -26,6 +26,8 @@
 #include "moscow/traits/primary/is_void.h"
 
 #include "moscow/traits/properties/is_const.h"
+#include "moscow/traits/properties/is_signed.h"
+#include "moscow/traits/properties/is_unsigned.h"
 #include "moscow/traits/properties/is_volatile.h"
 
 #endif //EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_

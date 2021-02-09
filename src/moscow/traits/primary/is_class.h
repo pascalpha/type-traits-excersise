@@ -5,8 +5,9 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_CLASS_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_CLASS_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/primary/is_union.h"
+#include "moscow/traits/relationships/is_same.h"
 
 namespace moscow {
 namespace detail {

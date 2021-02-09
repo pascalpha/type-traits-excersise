@@ -5,7 +5,7 @@
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_INTEGRAL_H
 
 #include "moscow/traits/const_volatility/remove_cv.h"
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 
 namespace moscow {
 namespace detail {

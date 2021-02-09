@@ -5,7 +5,7 @@
 #ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_REFERENCES_ADD_LVALUE_REFERENCE_H
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_REFERENCES_ADD_LVALUE_REFERENCE_H
 
-#include "moscow/traits/helper.h"
+#include "moscow/traits/traits.h"
 #include "moscow/traits/properties/is_referenceable.h"
 
 namespace moscow {

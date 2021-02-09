@@ -5,7 +5,7 @@
 #define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_NULLPTR_H
 
 #include "moscow/traits/const_volatility/remove_cv.h"
-#include "moscow/traits/helper.h"
+#include "moscow/traits/relationships/is_same.h"
 
 namespace moscow {
 /**
