@@ -1,8 +1,8 @@
 //
 // Created by mamin on 2/8/2021.
 //
-#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_INTEGRAL_H
-#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_INTEGRAL_H
+#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_INTEGRAL_H
+#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_INTEGRAL_H
 
 #include "moscow/traits/const_volatility/remove_cv.h"
 #include "moscow/traits/helper.h"
@@ -39,4 +39,4 @@ template<typename T> using is_integral = detail::is_integral_impl<remove_cv_t < 
 moscow_value_helper(is_integral);
 } // namespace moscow
 
-#endif //EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_INTEGRAL_H
+#endif //EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PRIMARY_IS_INTEGRAL_H

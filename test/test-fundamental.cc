@@ -51,4 +51,39 @@ TEST_F(fundamental, floating_point) {
   EXPECT_TRUE((is_floating_point_v<const volatile double>));
   EXPECT_TRUE((is_floating_point_v<const float>));
 }
+
+TEST_F(fundamental, misc) {
+  struct X {};
+  union Y {};
+  enum Z {};
+  EXPECT_TRUE(!(is_union_v<X>));
+  EXPECT_TRUE((is_union_v<Y>));
+  EXPECT_TRUE(!(is_union_v<double>));
+
+  EXPECT_TRUE((is_class_v<X>));
+  EXPECT_TRUE(!(is_class_v<Y>));
+  EXPECT_TRUE(!(is_class_v<double>));
+
+  EXPECT_TRUE(!(is_function_v<X>));
+  EXPECT_TRUE(!(is_function_v<Y>));
+  EXPECT_TRUE(!(is_function_v<double>));
+  EXPECT_TRUE((is_function_v<void(int *)>));
+  EXPECT_TRUE(!(is_function_v<void (&)(int *, int)>));
+
+  EXPECT_FALSE((is_enum_v<X>));
+  EXPECT_FALSE((is_enum_v<Y>));
+  EXPECT_FALSE((is_enum_v<int>));
+  EXPECT_FALSE((is_enum_v<double>));
+  EXPECT_TRUE((is_enum_v<Z>));
+}
+
+TEST_F(fundamental, object) {
+  class X;
+  EXPECT_TRUE(!(is_member_pointer_v<double>));
+  EXPECT_TRUE((is_member_pointer_v<int X::*>));
+  EXPECT_TRUE((is_member_object_pointer_v<int X::*>));
+  EXPECT_TRUE(!(is_member_function_pointer_v<int X::*>));
+  EXPECT_TRUE((is_member_function_pointer_v<int (X::*)(int)>));
+  EXPECT_TRUE(!(is_member_object_pointer_v<int (X::*)(int)>));
+}
 #pragma clang diagnostic pop

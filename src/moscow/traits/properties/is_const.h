@@ -1,8 +1,8 @@
 //
 // Created by mamin on 2/8/2021.
 //
-#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_CONST_H
-#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_CONST_H
+#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PROPERTIES_IS_CONST_H
+#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PROPERTIES_IS_CONST_H
 
 #include "moscow/traits/helper.h"
 
@@ -25,4 +25,4 @@ template<typename T> struct is_const<T const> : true_type {};
 moscow_value_helper(is_const);
 } // namespace moscow
 
-#endif //EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_CONST_H
+#endif //EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_PROPERTIES_IS_CONST_H

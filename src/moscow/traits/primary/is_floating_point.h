@@ -1,8 +1,8 @@
 //
 // Created by mamin on 2/8/2021.
 //
-#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_FLOATING_POINT_H
-#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_FLOATING_POINT_H
+#ifndef EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_IS_FLOATING_POINT_H
+#define EXERCISE_MOSCOW_SRC_MOSCOW_TRAITS_IS_FLOATING_POINT_H
 
 #include "moscow/traits/const_volatility/remove_cv.h"
 #include "moscow/traits/helper.h"
