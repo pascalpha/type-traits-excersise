@@ -14,19 +14,19 @@ namespace detail {
  * \tparam T
  * \return
  */
-template<typename T> auto is_referenceable_impl(int) -> T &;
+template<typename T> T &is_referenceable_impl(int);
 /**
  * \brief failed referenceable overload detector
  * \tparam T
  * \param ...
  */
-template<typename T> auto is_referenceable_impl(...) -> void;
+template<typename T> T is_referenceable_impl(...);
 } // namespace detail
 /**
  * \brief defines value = true if T is referenceable
  */
 template<typename T>
-using is_referenceable = bool_constant<!is_same_v<void, decltype(detail::is_referenceable_impl<T>(0))>>;
+using is_referenceable = bool_constant<!is_same_v < T, decltype(detail::is_referenceable_impl<T>(0))>>;
 
 /**
  * \brief value helper for is_referenceable

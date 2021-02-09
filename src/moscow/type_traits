@@ -10,6 +10,9 @@
 #include "moscow/traits/const_volatility/remove_cv.h"
 #include "moscow/traits/const_volatility/remove_volatile.h"
 
+#include "moscow/traits/pointers/add_pointer.h"
+#include "moscow/traits/pointers/remove_pointer.h"
+
 #include "moscow/traits/primary/is_array.h"
 #include "moscow/traits/primary/is_class.h"
 #include "moscow/traits/primary/is_enum.h"

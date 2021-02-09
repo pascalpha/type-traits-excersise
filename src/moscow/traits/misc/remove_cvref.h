@@ -13,7 +13,7 @@ namespace moscow {
 /**
  * \brief remove const volatility qualifiers and references from T
  */
-template<typename T> using remove_cvref = remove_cv_t<remove_reference_t<T>>;
+template<typename T> struct remove_cvref { using type = remove_cv_t<remove_reference_t<T>>; };
 
 /**
  * \brief type helper for remove_cvref

@@ -75,6 +75,14 @@ TEST_F(fundamental, misc) {
   EXPECT_FALSE((is_enum_v<int>));
   EXPECT_FALSE((is_enum_v<double>));
   EXPECT_TRUE((is_enum_v<Z>));
+
+  EXPECT_TRUE((is_uncvref_same_v<int, int>));
+  EXPECT_TRUE((is_uncvref_same_v<int, int const volatile>));
+  EXPECT_TRUE((is_uncvref_same_v<int, int const volatile &>));
+  EXPECT_TRUE((is_uncvref_same_v<int, int const &&>));
+  EXPECT_FALSE((is_uncvref_same_v<int, int const *>));
+  EXPECT_FALSE((is_uncvref_same_v<int, int const[]>));
+  EXPECT_FALSE((is_uncvref_same_v<int, void>));
 }
 
 TEST_F(fundamental, object) {
@@ -111,6 +119,19 @@ TEST_F(fundamental, signedness) {
   EXPECT_TRUE((is_unsigned_v<unsigned long>));
   EXPECT_TRUE(!(is_unsigned_v<double &>));
   EXPECT_TRUE(!(is_unsigned_v<signed[]>));
+}
 
+TEST_F(fundamental, pointer) {
+  EXPECT_TRUE((is_same_v<int, remove_pointer_t<int *>>));
+  EXPECT_TRUE((is_same_v<int, remove_pointer_t<int *const>>));
+  EXPECT_TRUE((is_same_v<int, remove_pointer_t<int *volatile>>));
+  EXPECT_TRUE((is_same_v<int, remove_pointer_t<int *const volatile>>));
+  EXPECT_TRUE((is_same_v<int, remove_pointer_t<int >>));
+  EXPECT_TRUE((is_same_v<void, remove_pointer_t<void *const volatile>>));
+
+  EXPECT_TRUE((is_same_v<int *, add_pointer_t<int>>));
+  EXPECT_TRUE((is_same_v<const int *, add_pointer_t<const int>>));
+  EXPECT_TRUE((is_same_v<int *, add_pointer_t<int &>>));
+  EXPECT_TRUE((is_same_v<int (*)(), add_pointer_t<int()>>));
 }
 #pragma clang diagnostic pop
