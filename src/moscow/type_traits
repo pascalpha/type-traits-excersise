@@ -42,11 +42,18 @@
 #include "moscow/traits/primary/is_void.h"
 
 #include "moscow/traits/properties/is_const.h"
+#include "moscow/traits/properties/is_empty.h"
+#include "moscow/traits/properties/is_final.h"
 #include "moscow/traits/properties/is_signed.h"
 #include "moscow/traits/properties/is_unsigned.h"
 #include "moscow/traits/properties/is_volatile.h"
 
 #include "moscow/traits/queries/extent.h"
 #include "moscow/traits/queries/rank.h"
+
+#include "moscow/traits/relationships/is_base_of.h"
+#include "moscow/traits/relationships/is_convertible.h"
+#include "moscow/traits/relationships/is_invocable.h"
+#include "moscow/traits/relationships/is_same.h"
 
 #endif //EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_

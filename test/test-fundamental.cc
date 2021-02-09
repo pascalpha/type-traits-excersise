@@ -186,5 +186,44 @@ TEST_F(fundamental, common) {
   EXPECT_TRUE((is_same_v<void *, common_type_t<int *, void *, double *>>));
   EXPECT_TRUE((is_same_v<int (*)(), common_type_t<int (*)(), int (&)()>>));
   EXPECT_TRUE((is_same_v<int (*)(), common_type_t<int (&)(), int()>>));
-};
+}
+
+TEST_F(fundamental, relations) {
+  struct Base {};
+  struct Derived : Base {};
+  struct Protected : protected Base {};
+  struct Private : private Base {};
+  struct Inherited : Derived {};
+
+  EXPECT_FALSE((is_base_of_v<int, int>));
+  EXPECT_FALSE((is_base_of_v<int, double *>));
+  EXPECT_FALSE((is_base_of_v<void *, void>));
+
+  EXPECT_TRUE((is_base_of_v<Base, Derived>));
+  EXPECT_TRUE((is_base_of_v<Base, Base>));
+  EXPECT_TRUE((is_base_of_v<Base, Protected>));
+  EXPECT_TRUE((is_base_of_v<Base, Private>));
+
+  EXPECT_FALSE((is_base_of_v<Derived, Base>));
+  EXPECT_FALSE((is_base_of_v<Derived, Protected>));
+  EXPECT_TRUE((is_base_of_v<Base, Inherited>));
+}
+
+TEST_F(fundamental, empty) {
+  struct Base {};
+  struct Derived : Base {};
+  struct Protected : protected Base { double i; };
+  struct Private : private Base {};
+  struct Inherited : Derived {};
+  struct Final final : Base {};
+  EXPECT_TRUE((is_empty_v<Base>));
+  EXPECT_TRUE((is_empty_v<Derived>));
+  EXPECT_TRUE((is_empty_v<Private>));
+  EXPECT_TRUE((is_empty_v<Inherited>));
+  EXPECT_TRUE((is_final_v<Final>));
+  EXPECT_FALSE((is_final_v<Base>));
+
+  EXPECT_FALSE((is_empty_v<Protected>));
+  EXPECT_FALSE((is_empty_v<int>));
+}
 #pragma clang diagnostic pop
