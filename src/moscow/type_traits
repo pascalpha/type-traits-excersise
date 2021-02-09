@@ -33,4 +33,7 @@
 #include "moscow/traits/properties/is_unsigned.h"
 #include "moscow/traits/properties/is_volatile.h"
 
+#include "moscow/traits/queries/extent.h"
+#include "moscow/traits/queries/rank.h"
+
 #endif //EXERCISE_MOSCOW_SRC_MOSCOW_TYPE_TRAITS_

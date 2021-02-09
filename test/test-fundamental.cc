@@ -134,4 +134,24 @@ TEST_F(fundamental, pointer) {
   EXPECT_TRUE((is_same_v<int *, add_pointer_t<int &>>));
   EXPECT_TRUE((is_same_v<int (*)(), add_pointer_t<int()>>));
 }
+
+TEST_F(fundamental, extent) {
+  EXPECT_EQ(1, (extent_v<int[1][2][3][4][5], 0>));
+  EXPECT_EQ(2, (extent_v<int[1][2][3][4][5], 1>));
+  EXPECT_EQ(3, (extent_v<int[1][2][3][4][5], 2>));
+  EXPECT_EQ(4, (extent_v<int[1][2][3][4][5], 3>));
+  EXPECT_EQ(5, (extent_v<int[1][2][3][4][5], 4>));
+
+  EXPECT_EQ(0, (extent_v<int[][2][3][4][5], 0>));
+  EXPECT_EQ(2, (extent_v<int[][2][3][4][5], 1>));
+  EXPECT_EQ(3, (extent_v<int[][2][3][4][5], 2>));
+  EXPECT_EQ(4, (extent_v<int[][2][3][4][5], 3>));
+  EXPECT_EQ(5, (extent_v<int[][2][3][4][5], 4>));
+
+  EXPECT_EQ(0, (extent_v<int[3], 4>));
+
+  EXPECT_EQ(5, (rank_v<int[1][2][3][4][5]>));
+  EXPECT_EQ(0, (rank_v<int>));
+  EXPECT_EQ(5, (rank_v<int[][2][3][4][5]>));
+}
 #pragma clang diagnostic pop
