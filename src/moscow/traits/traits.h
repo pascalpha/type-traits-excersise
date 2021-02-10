@@ -36,9 +36,10 @@ using true_type = bool_constant<true>;
 using false_type = bool_constant<false>;
 
 namespace detail {
-template<bool> struct meta_selector;
-template<> struct meta_selector<true> {};
-template<> struct meta_selector<false> {};
+template<typename...> struct selector {};
+template<typename T> struct selector<T> { using first = T; };
+template<typename T, typename U> struct selector<T, U> { using first = T; using second = U; };
+template<typename T, typename U, typename... R> struct selector<T, U, R...> { using first = T; using second = U; };
 
 template<template<typename...> typename Temp, typename... Ts, typename = Temp<Ts...>> true_type sfinae_impl(int);
 template<template<typename...> typename Temp, typename... Ts> false_type sfinae_impl(...);

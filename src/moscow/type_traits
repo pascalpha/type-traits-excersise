@@ -41,10 +41,16 @@
 #include "moscow/traits/primary/is_union.h"
 #include "moscow/traits/primary/is_void.h"
 
+#include "moscow/traits/properties/has_unique_object_representations.h"
+#include "moscow/traits/properties/is_abstract.h"
+#include "moscow/traits/properties/is_aggregate.h"
+#include "moscow/traits/properties/is_bounded_array.h"
 #include "moscow/traits/properties/is_const.h"
 #include "moscow/traits/properties/is_empty.h"
 #include "moscow/traits/properties/is_final.h"
+#include "moscow/traits/properties/is_polymorphic.h"
 #include "moscow/traits/properties/is_signed.h"
+#include "moscow/traits/properties/is_unbounded_array.h"
 #include "moscow/traits/properties/is_unsigned.h"
 #include "moscow/traits/properties/is_volatile.h"
 

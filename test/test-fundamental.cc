@@ -226,4 +226,40 @@ TEST_F(fundamental, empty) {
   EXPECT_FALSE((is_empty_v<Protected>));
   EXPECT_FALSE((is_empty_v<int>));
 }
+
+TEST_F(fundamental, polymorphic) {
+  struct Base { virtual void func(); };
+  struct Derived : Base {};
+  struct Protected : protected Base { double i = 0; };
+  struct Private : private Base {};
+  struct Inherited : Derived {};
+  struct Final final : Base {};
+
+  EXPECT_TRUE((is_polymorphic_v<Base>));
+  EXPECT_TRUE((is_polymorphic_v<Derived>));
+  EXPECT_TRUE((is_polymorphic_v<Protected>));
+  EXPECT_TRUE((is_polymorphic_v<Private>));
+  EXPECT_TRUE((is_polymorphic_v<Inherited>));
+  EXPECT_TRUE((is_polymorphic_v<Final>));
+  EXPECT_FALSE((is_polymorphic_v<int>));
+  EXPECT_FALSE((is_polymorphic_v<const void>));
+  EXPECT_FALSE((is_polymorphic_v<int *>));
+}
+
+TEST_F(fundamental, convertible) {
+  struct Base { virtual void func(); };
+  struct Derived : Base {};
+  struct Protected : protected Base { double i = 0; };
+  struct Private : private Base {};
+  struct Inherited : Derived {};
+  struct Final final : Base {};
+
+  EXPECT_TRUE((is_convertible_v<void *, const void *>));
+  EXPECT_TRUE((is_convertible_v<int *, const void *>));
+  EXPECT_TRUE((is_convertible_v<Derived *, Base *>));
+  EXPECT_TRUE((is_convertible_v<Final *, Base *>));
+  EXPECT_TRUE((is_convertible_v<Inherited *, Base *>));
+  EXPECT_FALSE((is_convertible_v<Protected *, Base *>));
+  EXPECT_FALSE((is_convertible_v<const void *, const int *>));
+}
 #pragma clang diagnostic pop
