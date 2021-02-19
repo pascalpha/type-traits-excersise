@@ -25,7 +25,10 @@
 #define _moscow_is_final(t) __is_final(t)
 #define _moscow_is_abstract(t) __is_abstract(t)
 #define _moscow_is_aggregate(t) __is_aggregate(t)
+
+/*
 #define _moscow_is_empty(t) __is_empty(t)
+*/
 
 /*type operations*/
 /*trivial family of traits*/
