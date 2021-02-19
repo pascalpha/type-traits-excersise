@@ -14,18 +14,18 @@ namespace detail {
  * inherited class with a member field
  * @tparam T
  */
-template<typename T> struct is_empty_impl_inherited : public T { double _; };
+template<typename T> struct type_and_double : public T { double _; };
 /**
  * class with the same member field
  * @tparam T
  */
-template<typename T> struct is_empty_impl_double { double _; };
+template<typename T> struct trivial_double { double _; };
 /**
  * Class types are final if the size of the two specified classes are equal
  * @tparam T
  */
 template<typename T, bool = is_class_v < T>>
-struct is_empty_impl : bool_constant<sizeof(is_empty_impl_double<T>) == sizeof(is_empty_impl_inherited<T>)> {};
+struct is_empty_impl : bool_constant<sizeof(trivial_double<T>) == sizeof(type_and_double<T>)> {};
 /**
  * Non-class types are not final.
  * @tparam T
