@@ -1,2 +1,2 @@
-# exercise-moscow
+# type traits exercise
 exercise stl
